@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DomoApp</h1>
+    <form id="form">
+      <input type="text" name="message/" id="send"/>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js" integrity="sha512-B4skI5FiLurS86aioJx9VfozI1wjqrn6aTdJH+YQUmCZum/ZibPBTX55k5d9XM6EsKePDInkLVrN7vPmJxc1qA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+      const chatSocket = new WebSocket(ws_scheme + '://' + window.location.host + "/ws/socket-server/");
+
+      console.log(chatSocket.url)
+      chatSocket.onmsessage = function(message) {
+              let data = JSON.parse(message.data)
+              console.log(data)
+            }
+    </script>
+  </body>
+</html>
+
