@@ -1,6 +1,6 @@
 # ApiDomoTech
 
-Url: 
+Url: https://domoappli.herokuapp.com/
 ## Endpoints
 
 - Get all lights: api/lights/
@@ -8,4 +8,4 @@ Url:
 - Update all lights: api/lights/<id>/create/
 - Delete all lights: api/lights/<id>/delete/
 
-- Websocket url: ws://
+- Websocket url: wss://domoappli.herokuapp.com/ws/socket-server/
